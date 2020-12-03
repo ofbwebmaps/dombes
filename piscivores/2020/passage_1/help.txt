@@ -1,0 +1,21 @@
+Datas for the first from ODK Central
+
+Format : CSV
+
+queries from redash
+
+Dropbox
+Replace 
+
+Birds 	: https://www.dropbox.com/s/yf4z4bw6xo52cr3/circuit_piscivores_bird_ipa.csv?dl=0
+Etangs 	: https://www.dropbox.com/s/cybk8a0ykpt1koh/circuit_piscivores.csv?dl=0
+
+table's number
+
+CSV Redash/Github:	https://raw.githubusercontent.com/ofbwebmaps/dombes/main/piscivores/2020/passage_1/circuit_piscivores-bird_ipa.csv
+Import Bird CSV 	--> 520474
+
+CSV Redash/Github:	https://raw.githubusercontent.com/ofbwebmaps/dombes/main/piscivores/2020/passage_1/circuit_piscivores.csv
+Etang CSV 			--> 520543
+
+TABLE PIVOT-LIKE SQLITE --> https://modern-sql.com/use-case/pivot
