@@ -1,4 +1,4 @@
-Query for Redash
+Queries for Redash
 ----------------
 
 SELECT etg_name
