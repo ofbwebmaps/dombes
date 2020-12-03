@@ -1,0 +1,35 @@
+Query for Redash
+----------------
+
+SELECT etg_name
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'cormo') G_Cormoran
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'h_cendre') H_Cendre
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'g_aigrette') G_Aigrette
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'g_huppe') G_Huppe
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'g_casta') G_Castagneux
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'c_tuber') C_Tubercule
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'm_rieuse') M_Rieuse
+     , SUM(bird_num) FILTER (WHERE bird_sp =  'h_bievre') H_Bievre
+     , y_lat, x_long
+FROM (SELECT etg_name, bird_sp, bird_num, y_lat, x_long
+      FROM etang, bird
+      WHERE p_key=f_key
+	  ORDER by etg_name) EspeceEtang
+GROUP BY etg_name
+ORDER BY etg_name
+
+
+Label for Redash's map - Piscivores
+-----------------------------------
+
+<div style="text-align: center;">
+	<p style="color: rgb(40, 116, 166); font-size:16px; line-height: 0.1;"><b>{{etg_name}}</b></p>
+	<b>Gd Cormoran</b> / {{g_cormoran}} ind.<br>
+	<b>Héron cendré</b> / {{c_cendre}} ind.<br>
+	<b>Gde Aigrette</b> / {{g_aigrette}} ind.<br>
+	<b>Grèbe huppé</b> / {{g_huppe}} ind.<br>
+	<b>Grèbe castagneux</b> / {{g_castagneux}} ind.<br>
+	<b>Cygne tuberculé</b> / {{c_tubercule}} ind.<br>
+	<b>Mouette rieuse</b> / {{m_rieuse}} ind.<br>
+	<b>Harle bièvre</b> / {{h_bievre}} ind.<br>
+</div>
